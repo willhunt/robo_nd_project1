@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <sdf version="1.4">
   	<world name="default">
+		<plugin name="welcome" filename="libwelcome.so"/>
 		<include>
 		  	<uri>model://ground_plane</uri>
 		</include>
@@ -8,7 +9,9 @@
 		  	<uri>model://sun</uri>
 		</include>
 		<include>
-			<uri>model://wheelie_robot</uri>
+			<uri>model://wheelie_robot_stable</uri>
+			<plugin name="model_bounce" filename="libmodel_bounce.so"/>
+			<!-- <plugin name="arm_torque" filename="libarm_torque.so"/> -->
 		</include>
 		<include>
 			<uri>model://building_downstairs</uri>
@@ -28,7 +31,7 @@
 			<static>true</static>
 			<pose>-2.386 -0.795 0 0 0 0</pose>
 		</include>
-		<!-- Random arrangement of boxes in back room -->
+		<!-- Arrangement of boxes in back room -->
     	<population name="box_population1">
 			<model name="boxes">
 				<include>

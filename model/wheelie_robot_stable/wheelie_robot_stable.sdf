@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.6">
+    <model name="wheelie_robot_stable">
+		<self_collide>true</self_collide>
+        <link name="body_1">
+            <frame name="body_1_frame">
+                <pose>0 0 0 0 -0 0</pose>
+            </frame>
+            <visual name="body_1_0_body_visual">
+                <pose>-3.46945e-18 -0.00635366 0.000337357 -0.106093 -0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>model://wheelie_robot_stable/meshes/body.stl</uri>
+                    </mesh>
+                </geometry>
+                <material>
+                    <ambient>0.141176 0.694118 0.65098 1</ambient>
+                    <diffuse>0.141176 0.694118 0.65098 1</diffuse>
+                    <specular>0.1 0.1 0.1 1</specular>
+                    <emissive>0 0 0 0</emissive>
+                </material>
+            </visual>
+            <collision name="body_1_0_body_collision">
+                <pose>-3.46945e-18 -0.00635366 0.000337357 -0.106093 -0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>model://wheelie_robot_stable/meshes/body.stl</uri>
+                    </mesh>
+                </geometry>
+            </collision>
+            <inertial>
+                <pose frame="body_1_frame">-9.07323e-18 0.010284 0.154704 0 0 0</pose>
+                <mass>3</mass>
+                <inertia>
+                    <ixx>0.00414217</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.00458101</iyy>
+                    <iyz>0.000325509</iyz>
+                    <izz>0.00167845</izz>
+                </inertia>
+            </inertial>
+        </link>
+        <link name="wheel_1">
+            <frame name="wheel_1_frame">
+                <pose>0 0 0 0 -0 0</pose>
+            </frame>
+            <visual name="wheel_1_0_wheel_visual">
+                <pose>0 0 0 0 -0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>model://wheelie_robot_stable/meshes/wheel.stl</uri>
+                    </mesh>
+                </geometry>
+                <material>
+                    <ambient>0.34902 0.376471 0.4 1</ambient>
+                    <diffuse>0.34902 0.376471 0.4 1</diffuse>
+                    <specular>0.1 0.1 0.1 1</specular>
+                    <emissive>0 0 0 0</emissive>
+                </material>
+            </visual>
+            <collision name="wheel_1_0_wheel_collision">
+                <pose>0 0 0 0 -0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>model://wheelie_robot_stable/meshes/wheel.stl</uri>
+                    </mesh>
+                </geometry>
+            </collision>
+            <inertial>
+                <pose frame="wheel_1_frame">1.38883e-19 -2.14806e-19 0.06 0 0 0</pose>
+                <mass>0.771889</mass>
+                <inertia>
+                    <ixx>0.00137583</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>0.000852807</iyy>
+                    <iyz>0</iyz>
+                    <izz>0.000852807</izz>
+                </inertia>
+            </inertial>
+        </link>
+        <joint name="primarywheel" type="revolute">
+            <pose>-0.0275 0 0.06 0 -0 0</pose>
+            <parent>body_1</parent>
+            <child>wheel_1</child>
+            <axis>
+                <xyz>-1 0 0</xyz>
+                <limit>
+                    <effort>1.5</effort>
+                    <velocity>22</velocity>
+                </limit>
+            </axis>
+        </joint>
+        <link name="arm_1">
+            <frame name="arm_1_frame">
+                <pose>0 0 0 0 -0 0</pose>
+            </frame>
+            <visual name="arm_1_0_arm_visual">
+                <pose>-0.065 0.0137691 -0.000399506 0.0328893 -0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>model://wheelie_robot_stable/meshes/arm.stl</uri>
+                    </mesh>
+                </geometry>
+                <material>
+                    <ambient>0.764706 0.545098 0.803922 1</ambient>
+                    <diffuse>0.764706 0.545098 0.803922 1</diffuse>
+                    <specular>0.1 0.1 0.1 1</specular>
+                    <emissive>0 0 0 0</emissive>
+                </material>
+            </visual>
+            <collision name="arm_1_0_arm_collision">
+                <pose>-0.065 0.0137691 -0.000399506 0.0328893 -0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>model://wheelie_robot_stable/meshes/arm.stl</uri>
+                    </mesh>
+                </geometry>
+            </collision>
+            <inertial>
+                <pose frame="arm_1_frame">-0.065 0.0650136 0.0942707 0 0 0</pose>
+                <mass>0.0521778</mass>
+                <inertia>
+                    <ixx>0.000159197</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>8.17911e-05</iyy>
+                    <iyz>7.56406e-05</iyz>
+                    <izz>7.8276e-05</izz>
+                </inertia>
+            </inertial>
+        </link>
+        <link name="rearwheel_1">
+            <frame name="rearwheel_1_frame">
+                <pose>0 0 0 0 -0 0</pose>
+            </frame>
+            <visual name="rearwheel_1_0_rearwheel_visual">
+                <pose>-0.0775 0.132718 0.0335303 0.0328893 -0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>model://wheelie_robot_stable/meshes/rearwheel.stl</uri>
+                    </mesh>
+                </geometry>
+                <material>
+                    <ambient>0.501961 0.486275 0.439216 1</ambient>
+                    <diffuse>0.501961 0.486275 0.439216 1</diffuse>
+                    <specular>0.1 0.1 0.1 1</specular>
+                    <emissive>0 0 0 0</emissive>
+                </material>
+            </visual>
+            <collision name="rearwheel_1_0_rearwheel_collision">
+                <pose>-0.0775 0.132718 0.0335303 0.0328893 -0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>model://wheelie_robot_stable/meshes/rearwheel.stl</uri>
+                    </mesh>
+                </geometry>
+            </collision>
+            <inertial>
+                <pose frame="rearwheel_1_frame">-0.0775 0.132718 0.0335303 0 0 0</pose>
+                <mass>0.0270823</mass>
+                <inertia>
+                    <ixx>5.76458e-06</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>3.39008e-06</iyy>
+                    <iyz>4.03222e-23</iyz>
+                    <izz>3.39008e-06</izz>
+                </inertia>
+            </inertial>
+        </link>
+        <joint name="rightwheel" type="revolute">
+            <pose>-0.07 0.132718 0.0335303 0.0328893 -0 0</pose>
+            <parent>arm_1</parent>
+            <child>rearwheel_1</child>
+            <axis>
+                <xyz>-1 0 0</xyz>
+                <limit>
+                    <effort>1.5</effort>
+                    <velocity>22</velocity>
+                </limit>
+            </axis>
+        </joint>
+        <joint name="rightarm" type="fixed">
+            <pose>-0.06 0.00900102 0.144522 0.0328893 -0 0</pose>
+            <parent>body_1</parent>
+            <child>arm_1</child>
+            <axis>
+                <xyz>1 0 0</xyz>
+				<dynamics>
+					<!-- <damping>1</damping> -->
+					<!-- <friction>0.4</friction> -->
+				</dynamics>
+                <limit>
+					<!-- <lower>0.5</lower>
+					<upper>2</upper> -->
+                    <effort>1</effort>
+                    <velocity>0.25</velocity>
+                </limit>
+            </axis>
+        </joint>
+        <link name="arm_2">
+            <frame name="arm_2_frame">
+                <pose>0 0 0 0 -0 0</pose>
+            </frame>
+            <visual name="arm_2_0_arm_visual">
+                <pose>0.065 0.0133962 -0.000411296 0.030316 -0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>model://wheelie_robot_stable/meshes/arm.stl</uri>
+                    </mesh>
+                </geometry>
+                <material>
+                    <ambient>0.764706 0.545098 0.803922 1</ambient>
+                    <diffuse>0.764706 0.545098 0.803922 1</diffuse>
+                    <specular>0.1 0.1 0.1 1</specular>
+                    <emissive>0 0 0 0</emissive>
+                </material>
+            </visual>
+            <collision name="arm_2_0_arm_collision">
+                <pose>0.065 0.0133962 -0.000411296 0.030316 -0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>model://wheelie_robot_stable/meshes/arm.stl</uri>
+                    </mesh>
+                </geometry>
+            </collision>
+            <inertial>
+                <pose frame="arm_2_frame">0.065 0.0648841 0.0941267 0 0 0</pose>
+                <mass>0.0521778</mass>
+                <inertia>
+                    <ixx>0.000159197</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>8.14018e-05</iyy>
+                    <iyz>7.56486e-05</iyz>
+                    <izz>7.86653e-05</izz>
+                </inertia>
+            </inertial>
+        </link>
+        <link name="rearwheel_2">
+            <frame name="rearwheel_2_frame">
+                <pose>0 0 0 0 -0 0</pose>
+            </frame>
+            <visual name="rearwheel_2_0_rearwheel_visual">
+                <pose>0.0775 0.132432 0.0332123 -0.645678 -0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>model://wheelie_robot_stable/meshes/rearwheel.stl</uri>
+                    </mesh>
+                </geometry>
+                <material>
+                    <ambient>0.501961 0.486275 0.439216 1</ambient>
+                    <diffuse>0.501961 0.486275 0.439216 1</diffuse>
+                    <specular>0.1 0.1 0.1 1</specular>
+                    <emissive>0 0 0 0</emissive>
+                </material>
+            </visual>
+            <collision name="rearwheel_2_0_rearwheel_collision">
+                <pose>0.0775 0.132432 0.0332123 -0.645678 -0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>model://wheelie_robot_stable/meshes/rearwheel.stl</uri>
+                    </mesh>
+                </geometry>
+            </collision>
+            <inertial>
+                <pose frame="rearwheel_2_frame">0.0775 0.132432 0.0332123 0 0 0</pose>
+                <mass>0.0270823</mass>
+                <inertia>
+                    <ixx>5.76458e-06</ixx>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                    <iyy>3.39008e-06</iyy>
+                    <iyz>-6.0977e-22</iyz>
+                    <izz>3.39008e-06</izz>
+                </inertia>
+            </inertial>
+        </link>
+        <joint name="leftwheel" type="revolute">
+            <pose>0.07 0.132432 0.0332123 -0.645678 -0 0</pose>
+            <parent>arm_2</parent>
+            <child>rearwheel_2</child>
+            <axis>
+                <xyz>-1 0 0</xyz>
+                <limit>
+                    <effort>1.5</effort>
+                    <velocity>22</velocity>
+                </limit>
+            </axis>
+        </joint>
+        <joint name="leftarm" type="fixed">
+            <pose>0.06 0.00900102 0.144522 0.030316 -0 0</pose>
+            <parent>body_1</parent>
+            <child>arm_2</child>
+            <axis>
+                <xyz>-1 0 0</xyz>
+				<dynamics>
+					<!-- <damping>1</damping> -->
+					<!-- <friction>0.4</friction> -->
+				</dynamics>
+                <limit>
+					<!-- <lower>0.5</lower>
+					<upper>2</upper>-->
+                    <effort>1</effort>
+                    <velocity>0.25</velocity>
+                </limit>
+            </axis>
+        </joint>
+    </model>
+</sdf>

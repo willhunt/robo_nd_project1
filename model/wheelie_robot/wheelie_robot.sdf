@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sdf version="1.6">
     <model name="wheelie_robot">
-		<static>true</static>
+		<static>false</static>
         <link name="body_1">
             <frame name="body_1_frame">
                 <pose>0 0 0 0 -0 0</pose>
