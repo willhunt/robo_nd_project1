@@ -6,7 +6,7 @@
 
 namespace gazebo
 {
-  class ModelPluginArmTorque : public ModelPlugin
+  class ModelPluginSpinArm : public ModelPlugin
   {
     public: void Load(physics::ModelPtr _parent, sdf::ElementPtr /*_sdf*/)
     {
@@ -16,7 +16,7 @@ namespace gazebo
       // Listen to the update event. This event is broadcast every
       // simulation iteration.
       this->updateConnection = event::Events::ConnectWorldUpdateBegin(
-          std::bind(&ModelPluginArmTorque::OnUpdate, this));
+          std::bind(&ModelPluginSpinArm::OnUpdate, this));
     }
 
     // Called by the world update start event
@@ -37,6 +37,7 @@ namespace gazebo
 		//	joint->SetHighStop(0, currentPosition);
 		//	joint->SetLowStop(0, currentPosition);
 		//}
+      this->model->GetJoint("spin_JOINT")->SetVelocity(0, 1);  // axis, velocity [rad/s]
 		
     }
 
@@ -48,5 +49,5 @@ namespace gazebo
   };
 
   // Register this plugin with the simulator
-  GZ_REGISTER_MODEL_PLUGIN(ModelPluginArmTorque)
+  GZ_REGISTER_MODEL_PLUGIN(ModelPluginSpinArm)
 }

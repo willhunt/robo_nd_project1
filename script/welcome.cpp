@@ -6,7 +6,7 @@ namespace gazebo
   {
     public: WorldPluginWelcome() : WorldPlugin()
             {
-              printf("World loaded for Build My World project of Udacity Robotics Nanodegree.\n");
+              printf("Welcome to Will's world!\n");
             }
 
     public: void Load(physics::WorldPtr _world, sdf::ElementPtr _sdf)

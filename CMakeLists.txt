@@ -11,5 +11,5 @@ target_link_libraries(welcome ${GAZEBO_LIBRARIES})
 add_library(model_bounce SHARED script/model_bounce.cpp)
 target_link_libraries(model_bounce ${GAZEBO_LIBRARIES})
 
-add_library(arm_torque SHARED script/arm_torque.cpp)
-target_link_libraries(arm_torque ${GAZEBO_LIBRARIES})
+add_library(spin_arm SHARED script/spin_arm.cpp)
+target_link_libraries(spin_arm ${GAZEBO_LIBRARIES})
