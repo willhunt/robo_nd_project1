@@ -3,7 +3,7 @@
 Project for the Build My World project of the Robotics Software Engineer Nanodegree program from Udacity.
 
 ## Running
-The environment variables will need to be set to find the model and plugin files. Enter the following in the termonal
+The environment variables will need to be set to find the model and plugin files. Enter the following in the terminal
 ```
 export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:/<path>/model
 export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/<path>/build
