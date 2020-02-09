@@ -4,18 +4,18 @@ Project for the Build My World project of the Robotics Software Engineer Nanodeg
 
 ## Running
 The environment variables will need to be set to find the model and plugin files. Enter the following in the terminal
-```
+```bash
 export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:/<path>/model
 export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/<path>/build
 ```
 The model can then be launched from the /world folder (--verbose optional)
-```
+```bash
 gazebo test.world --verbose
 ```
 
 ## Editing Plugins
 If editing plugin scripts in /scripts folder then they must be rebuilt. Navigate to /build folder and run:
-```
+```bash
 cmake ../
 make
 ```
